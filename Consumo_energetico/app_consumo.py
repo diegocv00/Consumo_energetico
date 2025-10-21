@@ -3,13 +3,13 @@ import joblib
 import pandas as pd
 
 # --- Cargar el modelo entrenado ---
-model = joblib.load("modelo_consumo_randomforest.pkl")
+model = joblib.load("modelo_consumo.pkl")
 
 # --- Título y descripción ---
 st.title("⚡ Predicción de Consumo Energético Global 🌍")
 st.write("""
-Esta aplicación usa un modelo Random Forest para predecir el consumo energético de combustibles fósiles de un país
-según su producción eléctrica y emisiones de CO₂.
+Esta aplicación usa un modelo XGB para predecir el consumo energético de combustibles fósiles de un país
+según su producción de energias renovables y emisiones de CO₂.
 """)
 
 # --- Entradas del usuario ---
