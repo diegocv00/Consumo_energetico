@@ -3,7 +3,8 @@ import joblib
 import pandas as pd
 
 # --- Cargar el modelo entrenado ---
-model = joblib.load("./modelo_consumo.pkl")
+model = joblib.load(os.path.join(BASE_DIR, "modelo_consumo.pkl"))
+
 
 # --- Título y descripción ---
 st.title("⚡ Predicción de Consumo Energético Global 🌍")
@@ -44,4 +45,5 @@ if st.button("🔍 Predecir consumo energético"):
         st.success(f"⚡ Predicción estimada: **{prediccion:.2f} TWh**")
     except Exception as e:
         st.error(f"Error al realizar la predicción: {e}")
+
 
