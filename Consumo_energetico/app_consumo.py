@@ -1,7 +1,8 @@
+import os
 import streamlit as st
 import joblib
 import pandas as pd
-import os
+
 
 # --- Cargar el modelo entrenado ---
 model = joblib.load(os.path.join(BASE_DIR, "modelo_consumo.pkl"))
@@ -46,6 +47,7 @@ if st.button("🔍 Predecir consumo energético"):
         st.success(f"⚡ Predicción estimada: **{prediccion:.2f} TWh**")
     except Exception as e:
         st.error(f"Error al realizar la predicción: {e}")
+
 
 
 
