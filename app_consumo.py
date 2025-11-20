@@ -5,11 +5,9 @@ import pandas as pd
 # --- Título y descripción ---
 st.title("⚡ Predicción de Consumo Energético Global 🌍")
 st.write("""
-Esta aplicación permite predecir el consumo energético de combustibles fósiles de un país
-según su producción de energías renovables y emisiones de CO₂.
-
-Puedes seleccionar el modelo de predicción que deseas utilizar.
-""")
+    Esta aplicación permite predecir la electricidad generada a partir de combustibles fósiles (TWh)
+    según factores energéticos, económicos y ambientales del país.
+    """)
 
 # --- Selección del modelo ---
 st.sidebar.header("⚙️ Configuración del modelo")
@@ -18,11 +16,8 @@ modelo_seleccionado = st.sidebar.selectbox(
     ("XGBoost", "Random Forest")
 )
 
-# --- Cargar el modelo según la selección ---
-if modelo_seleccionado == "XGBoost":
-    model_path = "modelo_xgb.pkl"
-else:
-    model_path = "modelo_rf.pkl"
+# --- Cargar el modelo ---
+model_path = "modelo_xgb.pkl" if modelo_seleccionado == "XGBoost" else "modelo_rf.pkl"
 
 try:
     model = joblib.load(model_path)
@@ -31,33 +26,68 @@ except Exception as e:
     st.sidebar.error(f"No se pudo cargar el modelo '{modelo_seleccionado}'. Error: {e}")
     st.stop()
 
-# --- Entradas del usuario ---
 st.header("Introduce los datos de entrada:")
 
 col1, col2 = st.columns(2)
 
 with col1:
-    electricidad_renovable = st.number_input(
-        "Electricity from renewables (TWh)", 
-        min_value=0.0, max_value=100000.0, value=2000.0
+    electricidad_renov = st.number_input(
+        "Electricity from renewables (TWh)",
+        min_value=0.0, max_value=150000.0, value=2000.0
+    )
+    
+    energia_per_capita = st.number_input(
+        "Primary energy consumption per capita (kWh/person)",
+        min_value=0.0, max_value=200000.0, value=50000.0
+    )
+    
+    gdp_per_capita = st.number_input(
+        "GDP per capita (USD)",
+        min_value=0.0, max_value=200000.0, value=20000.0
+    )
+    
+    year = st.number_input(
+        "Year",
+        min_value=1990, max_value=2050, value=2020
     )
 
 with col2:
-    emisiones_co2 = st.number_input(
-        "CO₂ emissions (kt)", 
-        min_value=0.0, max_value=100000000.0, value=50000.0
+    renov_share = st.number_input(
+        "Renewable energy share (%)",
+        min_value=0.0, max_value=100.0, value=30.0
+    )
+    
+    low_carbon = st.number_input(
+        "Low-carbon electricity (% electricity)",
+        min_value=0.0, max_value=100.0, value=40.0
+    )
+    
+    electricidad_nuclear = st.number_input(
+        "Electricity from nuclear (TWh)",
+        min_value=0.0, max_value=10000.0, value=500.0
+    )
+    
+    co2 = st.number_input(
+        "CO₂ emissions (kt) - Value_co2_emissions_kt_by_country",
+        min_value=0.0, max_value=50000000.0, value=50000.0
     )
 
-# --- Crear DataFrame de entrada ---
+# Crear DataFrame con el orden exacto de las columnas de entrenamiento
 input_data = pd.DataFrame({
-    "Electricity from renewables (TWh)": [electricidad_renovable],
-    "Value_co2_emissions_kt_by_country": [emisiones_co2]
+    "Electricity from renewables (TWh)": [electricidad_renov],
+    "Primary energy consumption per capita (kWh/person)": [energia_per_capita],
+    "gdp_per_capita": [gdp_per_capita],
+    "Year": [year],
+    "Renewable energy share in the total final energy consumption (%)": [renov_share],
+    "Low-carbon electricity (% electricity)": [low_carbon],
+    "Electricity from nuclear (TWh)": [electricidad_nuclear],
+    "Value_co2_emissions_kt_by_country": [co2]
 })
 
 # --- Botón de predicción ---
 if st.button("🔍 Predecir consumo energético"):
     try:
         prediccion = model.predict(input_data)[0]
-        st.success(f"⚡ Predicción estimada con {modelo_seleccionado}: **{prediccion:.2f} TWh**")
+        st.success(f"⚡ Predicción estimada ({modelo_seleccionado}): **{prediccion:.2f} TWh**")
     except Exception as e:
         st.error(f"Error al realizar la predicción: {e}")
