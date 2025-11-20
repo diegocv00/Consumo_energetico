@@ -14,22 +14,7 @@ Las predicciones se basan en variables energéticas y ambientales clave, entre e
 
 📈 Otras variables relacionadas con producción y consumo energético
 
-Además, la aplicación incluye una interfaz interactiva donde puedes comparar ambos modelos.
-
-
-🤖 Entrenamiento de Modelos
-
-Se entrenan y evalúan dos modelos:
-
-🌲 Random Forest
-
-🚀 XGBoost
-
-🖥️ Aplicación Interactiva en Streamlit
-
-Puedes acceder aquí:
-👉 https://consumoenergeticopredict.streamlit.app/
-
+Además, incluye una app con interfaz interactiva donde puedes comparar ambos modelos, puedes acceder aquí:👉 https://consumoenergeticopredict.streamlit.app/
 
 📊 Métricas de Desempeño
 🌲 Random Forest
@@ -47,4 +32,5 @@ Puedes acceder aquí:
 📗 R² Test: 0.992
 
 📉 RMSE Test: 33.138
+
 
