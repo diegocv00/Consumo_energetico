@@ -17,6 +17,7 @@ Las predicciones se basan en variables energéticas y ambientales clave, entre e
 Además, incluye una app con interfaz interactiva donde puedes comparar ambos modelos, puedes acceder aquí:👉 https://consumoenergeticopredict.streamlit.app/
 
 **📊 Métricas de Desempeño**
+
 🌲 Random Forest
 
 📘 R² Train: 0.9789  📗 R² Test: 0.949  📉 RMSE: 84.32
