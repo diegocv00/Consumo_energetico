@@ -1,5 +1,5 @@
-⚡ Predicción del Consumo Energético de Combustibles Fósiles
-🌍🔥 Modelos de Machine Learning para análisis energético global
+<h1>⚡ Predicción del Consumo Energético de Combustibles Fósiles</h1>
+<h2>🌍🔥 Modelos de Machine Learning para análisis energético global</h2>
 
 Este proyecto emplea modelos de Machine Learning —Random Forest y XGBoost— para predecir el consumo energético proveniente de combustibles fósiles en distintos países.
 Las predicciones se basan en variables energéticas y ambientales clave, entre ellas:
@@ -24,6 +24,7 @@ Además, incluye una app con interfaz interactiva donde puedes comparar ambos mo
 🚀 XGBoost
 
 📘 R² Train: 0.975 📗 R² Test: 0.992 📉 RMSE: 33.138
+
 
 
 
