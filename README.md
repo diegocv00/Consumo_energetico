@@ -14,6 +14,8 @@ Las predicciones se basan en variables energéticas y ambientales clave, entre e
 
 📈 Otras variables relacionadas con producción y consumo energético
 
+Se hizo uso de Grid Search para hallar los mejores hiperparámetros para cada modelo según una grilla de parámetros establecida.
+
 Además, incluye una app con interfaz interactiva donde puedes comparar ambos modelos, puedes acceder aquí:👉 https://consumoenergeticopredict.streamlit.app/
 
 **📊 Métricas de Desempeño**
