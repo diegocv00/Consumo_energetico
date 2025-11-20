@@ -1,62 +1,50 @@
 ⚡ Predicción del Consumo Energético de Combustibles Fósiles
-Modelos de Machine Learning para análisis energético global 🌍🔥
+🌍🔥 Modelos de Machine Learning para análisis energético global
 
 Este proyecto emplea modelos de Machine Learning —Random Forest y XGBoost— para predecir el consumo energético proveniente de combustibles fósiles en distintos países.
 Las predicciones se basan en variables energéticas y ambientales clave, entre ellas:
 
-Electricidad generada a partir de energías renovables
+🌱 Electricidad generada a partir de energías renovables
 
-Emisiones de CO₂
+🌫 Emisiones de CO₂
 
-Cantidad de energía nuclear producida
+☢️ Cantidad de energía nuclear producida
 
-Indicadores energéticos adicionales
+⚡ Indicadores energéticos adicionales
 
-Otras variables relacionadas con producción y consumo energético
+📈 Otras variables relacionadas con producción y consumo energético
 
-Además, la aplicación incluye una interfaz interactiva donde puedes comparar ambos modelos, visualizar sus métricas y realizar predicciones personalizadas.
+Además, la aplicación incluye una interfaz interactiva donde puedes comparar ambos modelos.
 
-🚀 Funcionalidad del Proyecto
 
-El flujo general del sistema se estructura en tres componentes principales:
+🤖 Entrenamiento de Modelos
 
-Preparación de Datos
+Se entrenan y evalúan dos modelos:
 
-Limpieza, transformación y selección de variables relevantes.
+🌲 Random Forest
 
-Normalización y división del dataset en entrenamiento y prueba.
+🚀 XGBoost
 
-Entrenamiento de Modelos
-Se entrenan y evalúan dos modelos: Random Forest y XGBoost.
-Cada modelo se calibra para maximizar precisión y reducir error.
-
-Aplicación Interactiva en Streamlit
-
-Comparación visual de métricas
-
-Panel para predicción personalizada
-
-Explicaciones visuales del impacto de cada variable
-
-Gráficos y análisis interpretables
+🖥️ Aplicación Interactiva en Streamlit
 
 Puedes acceder aquí:
-https://consumoenergeticopredict.streamlit.app/
+👉 https://consumoenergeticopredict.streamlit.app/
+
 
 📊 Métricas de Desempeño
+🌲 Random Forest
 
-Random Forest
+📘 R² Train: 0.9789
 
-R² Train: 0.9789
+📗 R² Test: 0.949
 
-R² Test: 0.949
+📉 RMSE Test: 84.32
 
-RMSE Test: 84.32
+🚀 XGBoost
 
-XGBoost
+📘 R² Train: 0.975
 
-R² Train: 0.975
+📗 R² Test: 0.992
 
-R² Test: 0.992
+📉 RMSE Test: 33.138
 
-RMSE Test: 33.138
