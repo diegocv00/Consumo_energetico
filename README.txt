@@ -19,18 +19,11 @@ Además, incluye una app con interfaz interactiva donde puedes comparar ambos mo
 📊 Métricas de Desempeño
 🌲 Random Forest
 
-📘 R² Train: 0.9789
-
-📗 R² Test: 0.949
-
-📉 RMSE Test: 84.32
+📘 R² Train: 0.9789  📗 R² Test: 0.949  📉 RMSE: 84.32
 
 🚀 XGBoost
 
-📘 R² Train: 0.975
+📘 R² Train: 0.975 📗 R² Test: 0.992 📉 RMSE: 33.138
 
-📗 R² Test: 0.992
-
-📉 RMSE Test: 33.138
 
 
