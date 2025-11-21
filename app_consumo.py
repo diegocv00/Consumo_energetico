@@ -32,43 +32,43 @@ col1, col2 = st.columns(2)
 
 with col1:
     electricidad_renov = st.number_input(
-        "Electricity from renewables (TWh)",
+        "Electricidad a partir de renovables (TWh)",
         min_value=0.0, max_value=150000.0, value=2000.0
     )
     
     energia_per_capita = st.number_input(
-        "Primary energy consumption per capita (kWh/person)",
+        "Consumo de energía primaria per cápita (kWh/person)",
         min_value=0.0, max_value=200000.0, value=50000.0
     )
     
     gdp_per_capita = st.number_input(
-        "GDP per capita (USD)",
+        "PIB per cápita (USD)",
         min_value=0.0, max_value=200000.0, value=20000.0
     )
     
     year = st.number_input(
-        "Year",
+        "Año",
         min_value=1990, max_value=2050, value=2020
     )
 
 with col2:
     renov_share = st.number_input(
-        "Renewable energy share (%)",
+        "Cuota de energías renovables (%)",
         min_value=0.0, max_value=100.0, value=30.0
     )
     
     low_carbon = st.number_input(
-        "Low-carbon electricity (% electricity)",
+        "Electricidad con bajas emisiones de carbono (% de la electricidad)",
         min_value=0.0, max_value=100.0, value=40.0
     )
     
     electricidad_nuclear = st.number_input(
-        "Electricity from nuclear (TWh)",
+        "Electricidad procedente de la energía nuclear (TWh)",
         min_value=0.0, max_value=10000.0, value=500.0
     )
     
     co2 = st.number_input(
-        "CO₂ emissions (kt) - Value_co2_emissions_kt_by_country",
+        "Emisiones de CO₂ (kt)",
         min_value=0.0, max_value=50000000.0, value=50000.0
     )
 
@@ -90,4 +90,5 @@ if st.button("🔍 Predecir consumo energético"):
         prediccion = model.predict(input_data)[0]
         st.success(f"⚡ Predicción estimada ({modelo_seleccionado}): **{prediccion:.2f} TWh**")
     except Exception as e:
+
         st.error(f"Error al realizar la predicción: {e}")
